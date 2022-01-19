@@ -35,6 +35,8 @@
   </scm>
 
   <properties>
+    <sonar.organization>m-g-sonar-github</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <required.jdk.version>17</required.jdk.version>
     <maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>
   </properties>
