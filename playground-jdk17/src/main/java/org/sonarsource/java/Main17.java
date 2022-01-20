@@ -2,40 +2,41 @@ package org.sonarsource.java;
 
 public class Main17 {
 
-  static Object foo(Object o) {
+  static Object switchDefaultCase(Object o) {
     return switch (o) {
       case default -> o;
     };
   }
 
-  static int switch_array_null_pattern(Object o) {
+  static int switchArrayNullPattern(Object o) {
     return switch (o) {
       case Object[] arr -> arr.length;
+      // default case voluntarily not in last position
       default -> -1;
       case null -> 42;
     };
   }
 
-  static int switch_array_default_null_pattern(Object o) {
+  static int switchArrayDefaultNullPattern(Object o) {
     return switch (o) {
       case Object[] arr -> arr.length;
       case default, null -> 42;
     };
   }
 
-  static String switch_sealed_class_minimum(Shape shape) {
+  static String switchSealedClassMinimum(Shape shape) {
     return switch (shape) {
-      case Triangle t -> "triangle";
-      case Rectangle r -> "rectangle";
+      case Triangle t -> "triangle " + t;
+      case Rectangle r -> "rectangle" + r;
     };
   }
 
-  static String switch_sealed_class_null_default_sub_classes(Shape shape) {
+  static String switchSealedClassNullDefaultSubClasses(Shape shape) {
     return switch (shape) {
       case null -> "null case";
       case Triangle t -> String.format("triangle (%d,%d,%d)", t.a(), t.b(), t.c());
       case Rectangle r && r.volume() > 42 -> String.format("big rectangle of volume %d!", r.volume());
-      case Square s -> "Square!";
+      case Square s -> String.format("Square %s!", s);
       case Rectangle r -> String.format("Rectangle (%d,%d)", r.base, r.height);
       default -> "default case";
     };
@@ -46,8 +47,11 @@ public class Main17 {
   }
 
   public static non-sealed class Rectangle implements Shape {
-    private int base, height;
+    protected int base;
+    protected int height;
     Rectangle(int base, int height) { this.base = base; this.height = height; }
+    @Override
+    public String toString() { return String.format("%dx%d", base, height); }
   }
 
   public static final class Square extends Rectangle {

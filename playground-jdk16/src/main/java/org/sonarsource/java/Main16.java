@@ -5,10 +5,11 @@ public class Main16 {
   /**
    * JEP-394 (final) Pattern Matching for instanceof 
    */
-  static void foo(Object o) {
+  static String foo(Object o) {
     if (o instanceof Point p) {
-      System.out.println(p.text());
+      return p.text();
     }
+    return "";
   }
 
   /**
