@@ -8,11 +8,7 @@ import org.sonarsource.java.SealedClasses.Triangle;
 /**
  * JEP-406 (1st preview) Pattern Matching for switch
  */
-public final class PatternMatchingForSwitch {
-
-  private PatternMatchingForSwitch() {
-    // Utility class
-  }
+public interface PatternMatchingForSwitch {
 
   static Object switchDefaultCase(Object o) {
     return switch (o) {
@@ -38,19 +34,19 @@ public final class PatternMatchingForSwitch {
 
   static String switchSealedClassMinimum(Shape shape) {
     return switch (shape) {
-      case Triangle t -> "triangle " + t;
-      case Rectangle r -> "rectangle" + r;
+      case Triangle t -> t.toString();
+      case Rectangle r -> "Rectangle " + r;
     };
   }
 
   static String switchSealedClassNullDefaultSubClasses(Shape shape) {
     return switch (shape) {
       case null -> "null case";
-      case Triangle t -> String.format("triangle (%d,%d,%d)", t.a(), t.b(), t.c());
-      case Rectangle r && r.volume() > 42 -> String.format("big rectangle of volume %d!", r.volume());
+      case Triangle t -> String.format("Triangle (%d,%d,%d)", t.a(), t.b(), t.c());
+      case Rectangle r && r.volume() > 42 -> String.format("Big rectangle of volume %d!", r.volume());
       case Square s -> String.format("Square %s!", s);
       case Rectangle r -> String.format("Rectangle (%d,%d)", r.base, r.height);
-      default -> "default case";
+      default -> "unreachable default case...";
     };
   }
 }

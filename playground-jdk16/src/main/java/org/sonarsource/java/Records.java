@@ -5,7 +5,7 @@ package org.sonarsource.java;
  */
 public interface Records {
 
-  public static record Point(int x, int y) {
+  static record Point(int x, int y) {
     public String text() {
       return String.format("Point@<%d;%d>", x() , y());
     }
