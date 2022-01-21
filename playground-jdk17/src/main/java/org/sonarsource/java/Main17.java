@@ -2,6 +2,9 @@ package org.sonarsource.java;
 
 public class Main17 {
 
+  /**
+   * JEP-406 (1st preview) Pattern Matching for switch
+   */
   static Object switchDefaultCase(Object o) {
     return switch (o) {
       case default -> o;
@@ -42,6 +45,9 @@ public class Main17 {
     };
   }
 
+  /**
+   * JEP-409 (final) sealed classes
+   */
   public sealed interface Shape permits Rectangle,Triangle {
     default int volume() { return 0; }
   }
