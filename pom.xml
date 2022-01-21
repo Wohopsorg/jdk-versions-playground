@@ -38,7 +38,9 @@
     <sonar.organization>m-g-sonar-github</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <required.jdk.version>17</required.jdk.version>
+    <jacoco.version>0.8.7</jacoco.version>
     <maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencyManagement>
@@ -91,11 +93,39 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.9.0</version>
         <configuration>
           <release>${required.jdk.version}</release>
           <source>${required.jdk.version}</source>
           <target>${required.jdk.version}</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+        <configuration>
+          <formats>XML</formats>
+        </configuration>
+        <executions>
+          <execution>
+            <id>default-prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>default-report</id>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
