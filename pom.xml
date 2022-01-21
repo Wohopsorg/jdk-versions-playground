@@ -23,8 +23,8 @@
   </developers>
 
   <modules>
-    <module>playground-jdk17</module>
     <module>playground-jdk16</module>
+    <module>playground-jdk17</module>
   </modules>
 
   <scm>
