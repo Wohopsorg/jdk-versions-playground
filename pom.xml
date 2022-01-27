@@ -130,4 +130,14 @@
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <id>local</id>
+      <properties>
+        <sonar.organization> </sonar.organization>
+        <sonar.host.url>http://localhost:9000/</sonar.host.url>
+      </properties>
+    </profile>
+  </profiles>
+
 </project>
