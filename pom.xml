@@ -24,7 +24,7 @@
 
   <modules>
     <module>playground-jdk16</module>
-    <module>playground-jdk17</module>
+    <module>playground-jdk18</module>
   </modules>
 
   <scm>
@@ -37,8 +37,8 @@
   <properties>
     <sonar.organization>m-g-sonar-github</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <required.jdk.version>17</required.jdk.version>
-    <jacoco.version>0.8.7</jacoco.version>
+    <required.jdk.version>18</required.jdk.version>
+    <jacoco.version>0.8.8</jacoco.version>
     <maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
