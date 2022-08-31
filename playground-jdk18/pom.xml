@@ -56,6 +56,15 @@
           </compilerArgs>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>
+          <release>${required.jdk.version}</release>
+          <additionalOptions>--enable-preview</additionalOptions>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
