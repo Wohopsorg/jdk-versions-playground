@@ -9,13 +9,13 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>playground-jdk17</artifactId>
+  <artifactId>playground-jdk18</artifactId>
 
-  <name>Playground :: JDK 17</name>
-  <description>Playground area for JDK17</description>
+  <name>Playground :: JDK 18</name>
+  <description>Playground area for JDK18</description>
 
   <properties>
-    <required.jdk.version>17</required.jdk.version>
+    <required.jdk.version>18</required.jdk.version>
     <!-- required to test preview features and share the configuration to all maven plugins (jacoco, surefire, failsafe, ...) -->
     <argLine>--enable-preview</argLine>
   </properties>
@@ -37,6 +37,10 @@
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
     </dependency>
   </dependencies>
 
