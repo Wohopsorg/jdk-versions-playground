@@ -1,0 +1,6 @@
+// @start region = "otherStuff"
+if (true) {
+  foo();
+  bar();
+}
+// @end

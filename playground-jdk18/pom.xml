@@ -54,6 +54,9 @@
           <compilerArgs>
             --enable-preview
           </compilerArgs>
+          <excludes>
+            <exclude>**/snippet-files/**</exclude>
+          </excludes>
         </configuration>
       </plugin>
       <plugin>
@@ -63,6 +66,9 @@
         <configuration>
           <release>${required.jdk.version}</release>
           <additionalOptions>--enable-preview</additionalOptions>
+          <sourceFileIncludes>
+            <sourceFileInclude>**/javadoc/**/*.java</sourceFileInclude>
+          </sourceFileIncludes>
         </configuration>
       </plugin>
     </plugins>
