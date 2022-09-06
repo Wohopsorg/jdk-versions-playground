@@ -66,6 +66,7 @@
         <configuration>
           <release>${required.jdk.version}</release>
           <additionalOptions>--enable-preview</additionalOptions>
+          <failOnError>false</failOnError>
           <sourceFileIncludes>
             <sourceFileInclude>**/javadoc/**/*.java</sourceFileInclude>
           </sourceFileIncludes>
