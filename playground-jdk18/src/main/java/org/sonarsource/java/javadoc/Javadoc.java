@@ -127,7 +127,7 @@ public interface Javadoc {
    *   class HelloWorld {
    *     public static void main(String... args) {
    *       System.out.println("Hello World!");  // @link regex='".+"' target="java.lang.String" @link region="sysout" regex="Sy.*out" target="System#out"
-   *       System.out.println('c');  // @link regex="'.'" target="java.lang.Character"
+   *       System.out.println('c');  // @link regex="'.'" target="org.sonarsource.java.SealedClasses.Triangle"
    *     } // @end
    *   }
    *   System.out.println("Not highlighted");
@@ -137,6 +137,7 @@ public interface Javadoc {
 
   /**
    * Links in text with regex using both quotes and double-quotes.
+   * {@link java.lang.String yolo}
    *
    * {@snippet :
    *   class HelloWorld {
@@ -148,5 +149,21 @@ public interface Javadoc {
    * }
    */
   void linkingTextWithRegexPainful();
+
+  /**
+   * Regions with wrong start and end.
+   *
+   * {@snippet :
+   *   class HelloWorld { // @highlight region="myRegion" substring="ma" type="highlighted"
+   *     Object o;
+   *     public static void main(String... args) { // @start region="myRegion"
+   *       System.out.println("Oh mama, this is letter 'c'!");
+   *     } // @end region = "myRegion"
+   *   }
+   * }
+   */
+  void messyRegions();
+
+  void toto(Object o, String s, int i) throws Exception;
 
 }
