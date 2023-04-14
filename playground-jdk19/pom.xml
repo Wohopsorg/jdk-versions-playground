@@ -9,13 +9,17 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>playground-jdk18</artifactId>
+  <artifactId>playground-jdk19</artifactId>
 
-  <name>Playground :: JDK 18</name>
-  <description>Playground area for JDK18</description>
+  <name>Playground :: JDK 19</name>
+  <description>Playground area for JDK19</description>
 
   <properties>
-    <required.jdk.version>18</required.jdk.version>
+    <!-- To analyze more folders and include other files in the maven analysis-->
+    <sonar.sources>pom.xml,src/main/java,src/main/resources</sonar.sources>
+    <sonar.tests>src/test/java</sonar.tests>
+
+    <required.jdk.version>19</required.jdk.version>
     <!-- required to test preview features and share the configuration to all maven plugins (jacoco, surefire, failsafe, ...) -->
     <argLine>--enable-preview</argLine>
   </properties>

@@ -1,0 +1,15 @@
+<mvc:View
+          controllerName="sap.sf.timemanagement.payoutAndPurchase.controller.PurchaseDashboard"
+          displayBlock="true"
+          xmlns="sap.m"
+          xmlns:f="sap.f"
+          xmlns:grid="sap.ui.layout.cssgrid"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns:core="sap.ui.core"
+          height="100%">
+        <Column minScreenWidth="Desktop" demandPopin="true" hAlign="End"
+                visible="{purchaseAttachmentSettings>/hasAttachmentField}">
+          <InvisibleText id="tlmColumnPurchaseAttachmentText"
+                         text="{purchaseAttachmentSettings>/attachmentNavLabel}"/>
+        </Column>
+</mvc:View>

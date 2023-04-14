@@ -24,7 +24,7 @@
 
   <modules>
     <module>playground-jdk16</module>
-    <module>playground-jdk18</module>
+    <module>playground-jdk19</module>
   </modules>
 
   <scm>
