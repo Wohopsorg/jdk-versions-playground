@@ -12,23 +12,22 @@ public interface PatternMatchingForSwitch {
 
   static Object switchDefaultCase(Object o) {
     return switch (o) {
-      case default -> o;
+      default -> o;
     };
   }
 
   static int switchArrayNullPattern(Object o) {
     return switch (o) {
       case Object[] arr -> arr.length;
-      // default case voluntarily not in last position
-      default -> -1;
       case null -> 42;
+      default -> -1;
     };
   }
 
   static int switchArrayDefaultNullPattern(Object o) {
     return switch (o) {
       case Object[] arr -> arr.length;
-      case default, null -> 42;
+      case null, default -> 42;
     };
   }
 
