@@ -9,13 +9,13 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>playground-jdk16</artifactId>
+  <artifactId>playground-jdk17</artifactId>
 
-  <name>Playground :: JDK 16</name>
+  <name>Playground :: JDK 17</name>
   <description>Playground area for JDK17</description>
 
   <properties>
-    <required.jdk.version>16</required.jdk.version>
+    <required.jdk.version>17</required.jdk.version>
   </properties>
 
   <dependencies>
