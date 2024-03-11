@@ -35,7 +35,7 @@
   </scm>
 
   <properties>
-    <sonar.organization>wohops</sonar.organization>
+    <sonar.organization>wohopsorg</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <required.jdk.version>21</required.jdk.version>
     <jacoco.version>0.8.11</jacoco.version>
