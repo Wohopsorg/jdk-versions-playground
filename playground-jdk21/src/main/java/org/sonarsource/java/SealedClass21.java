@@ -24,7 +24,7 @@ public interface SealedClass21 {
     // 3 types
     switch (animal) {
       case Cat ignored -> { }
-      case Dog ignored -> System.out.println();
+      case Dog ignored -> { /* ignored */  }
       case Phoenix ignored -> throw new IllegalStateException();
     }
 
